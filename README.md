@@ -1,6 +1,8 @@
-# ai-skills
-All my AI skills
+# AI Skills
+
+My collection of AI skills.
 
 ## Skills
+
 - [light-reading](light-reading)
-- [aprender-rapido](aprender-rapido)
+- [fast-learning](fast-learning)
