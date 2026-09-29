@@ -52,7 +52,7 @@ Avoid concluding mastery from:
 
 Occasionally ask how confident the user is, from 0 to 100%. Compare confidence with performance; confidence is an additional signal, not a knowledge score.
 
-- High confidence with an incorrect answer: prioritize correcting the misconception.
+- High confidence with an incorrect answer: prioritize correcting the misconception using prediction and contradiction (see "Misconceptions" in `learning-loop.md`).
 - Low confidence with a correct answer: the knowledge may be accurate but unstable.
 - High confidence with a correct answer in a new context: good evidence of mastery.
 
@@ -63,6 +63,10 @@ Use the classification to choose the next step: knowledge gap, concept confusion
 ## When not to declare mastery
 
 Do not declare mastery when the user only reread, agreed with the explanation, answered by recognition when production was required, repeated the example verbatim, received so much help that the answer was no longer independent, or has not yet applied the knowledge when application was the goal.
+
+## Provisional and stable mastery
+
+An answer given right after an explanation shows comprehension, not retention. Mark mastery as provisional until the user retrieves or applies the knowledge after other material has intervened: in a later micro-lesson or, for long-term goals, a later session. Only then treat it as stable.
 
 ## Final source assessment
 

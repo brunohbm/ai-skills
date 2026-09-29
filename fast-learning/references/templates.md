@@ -2,7 +2,17 @@
 
 Use these after classifying what the user wants to learn. Each section explains where to focus effort, how to adapt the lesson cycle, and which questions to ask.
 
-## 0. Learning from a source
+## Contents
+
+1. Learning from a source
+2. Conceptual
+3. Factual (vocabulary, terminology, dates)
+4. Procedural (math, programming, techniques)
+5. Languages
+6. Exam, certification, or interview preparation
+7. Ready-to-use prompts
+
+## 1. Learning from a source
 
 When the user provides a source:
 
@@ -14,16 +24,6 @@ When the user provides a source:
 6. Test transfer when the goal requires application, and track gaps.
 
 Do not automatically turn the source into a summary. A summary is a reference artifact; learning is demonstrated by the user's performance. For the full workflow, see `source-learning.md`.
-
-## Contents
-
-1. Learning from a source
-2. Conceptual
-3. Factual (vocabulary, terminology, dates)
-4. Procedural (math, programming, techniques)
-5. Languages
-6. Exam, certification, or interview preparation
-7. Ready-to-use prompts
 
 ## 2. Conceptual
 
@@ -39,7 +39,7 @@ Focus: relationships, causes, and counterexamples.
 Focus: repeated, spaced retrieval; a few items at a time.
 
 - Group by meaning, not alphabetically. Connect each item to something the user already knows (a personal example, image, or phrase).
-- Introduce no more than 7 to 10 new items per lesson.
+- Introduce a small batch of new items at a time, and add more only when the user retrieves most of the current batch. There is no well-established ideal number; adjust it to how many items the user is actually retrieving.
 - Use one question per flashcard. Ask the user to **create** their own examples; generating examples helps more than reading yours.
 - Review missed items in the same session and again the next day; space items answered correctly farther apart.
 - For large sets, suggest a spaced-repetition app such as Anki and offer to create the cards.
