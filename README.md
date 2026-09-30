@@ -10,10 +10,11 @@ My collection of AI skills.
 | [use-diagrams](use-diagrams) | **Text or diagram**, and how to draw it | Visual layer. Draws inline in the chat when a picture explains better than prose. |
 | [fast-learning](fast-learning) | **What** to teach, when to test, when to move on | Teaching engine. Micro-lessons with retrieval, practice, and mastery checks. |
 | [checkpoint](checkpoint) | **What** goes into a pause note | Continuity. Lets you stop now and resume later without reconstructing. |
+| [anime-search](anime-search) | **Which** anime the user means, and **what** each episode has | Research. API-first lookup (AniList, Kitsu, Jikan, Wikipedia) with a browser fallback (Playwright MCP) for pages without an API. |
 
 ## How they connect
 
-Each skill owns one decision and loads the others when they are available. None of them requires the others to work.
+Each skill owns one decision and loads the others when they are available. None of them requires the others to work. anime-search stands alone: it needs Python 3 for its helper script and, optionally, a browser tool.
 
 ```mermaid
 flowchart TD
