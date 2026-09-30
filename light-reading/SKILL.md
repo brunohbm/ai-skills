@@ -1,7 +1,6 @@
 ---
 name: light-reading
 description: Formats and rewrites text to reduce the reader's cognitive load, making reading easier, more pleasant, and faster to process. This skill is optimized for readers with limited working memory, including ADHD, and emphasizes action-first output, explicit state, visible progress, and minimal friction. Use whenever the user asks to make text clearer, more readable, easier to read, simpler, "cleaned up", restructured, formatted for reading, easier to scan, or less tiring. This also applies to long, technical, or dense texts (summaries, reports, explanations, documents, emails, study materials, documentation) that will be read by someone else, even if the user does not explicitly ask for legibility. It also applies to requests such as “this is confusing,” “this is dense,” “too much text,” “make it more didactic,” “make it easier for the reader,” or “simplify it.” Use the layout recommendations (font, spacing, width) when generating HTML, DOCX, PDF, or slide content.
-disable-model-invocation: true
 license: MIT
 metadata:
   tags: "ADHD, Output Style, Productivity, Formatting, Readability"
@@ -22,9 +21,14 @@ When reformatting an existing text, do not change facts, numbers, nuances, techn
 
 ## ADHD-aware output rules
 
-### Persistence
+### Scope and persistence
 
-This instruction is not scoped to a single reply. It applies to the entire chat session and all subsequent turns until the user explicitly says “stop adhd mode” or “normal mode”. It remains active across topic changes, follow-up questions, and multi-step work. If there is any doubt, continue applying it.
+How long these rules last depends on how the skill was started:
+
+- **Response mode** (the user invoked this skill directly, or asked for “adhd mode”, “light-reading mode”, or for your replies themselves to be easier to read from now on): the rules below persist, as described in this section.
+- **Single text** (the user asked to rewrite or format one specific text, or another skill loaded this one as its presentation layer): apply the rules to that output only. Do not change the style of later replies unless response mode is already on.
+
+In response mode, this instruction is not scoped to a single reply. It applies to the entire chat session and all subsequent turns until the user explicitly says “stop adhd mode” or “normal mode”. It remains active across topic changes, follow-up questions, and multi-step work. If there is any doubt, continue applying it.
 
 This is a persistent output contract for the whole conversation: every answer must prioritize immediate next action, explicit state, low cognitive load, and visible progress. Do not relax these rules after one turn or after a short exchange.
 
@@ -170,7 +174,7 @@ Example:
 ### 5. Density
 - Do not stack too many new concepts at once. Introduce one, give an example, then move to the next.
 - Concrete examples soon after an abstract idea reduce inference effort a great deal.
-- If the topic is inherently dense, the solution is to break it into chunks and order it from simple to complex, from known to new—not to cut content.
+- If the topic is inherently dense, the solution is to break it into chunks and order it from simple to complex, from known to new. Do not cut content.
 
 ### 6. Emphasis
 - Use bold sparingly, only for key terms or conclusions. If nearly everything is highlighted, nothing is.
@@ -180,6 +184,7 @@ Example:
 - Include them only when they explain something the text explains poorly: comparison of several dimensions (table), a process with steps and branches (flowchart), or spatial or structural relationships (diagram).
 - Decorative elements without function are a distraction. Each figure needs a caption or linking sentence and should be placed near the section it illustrates.
 - Tables: clear headers, few columns, consistent alignment.
+- In chat, when `use-diagrams` is available, let it make the text-or-diagram decision and draw the diagram. This skill still governs the prose around it.
 
 ## Visual presentation (when generating HTML, DOCX, PDF, or slides)
 
@@ -210,6 +215,16 @@ Reasonable starting values, not strict rules:
 - “Simplifying” by replacing precise terms with vague ones.
 - Highlighting too much.
 - Applying the rules mechanically (for example, forbidding every passive construction or every sentence above X words). The criterion is the reader’s effort, not the word count.
+
+## Working with other skills
+
+Other skills can load this one as their presentation layer. They decide **what** to say; this skill decides **how it reads**. For their output, their placement rules win over the ones here:
+
+- `fast-learning`: in a teaching turn, the user's next action is a question, so it goes **last**, not first.
+- `checkpoint`: the note *is* the summary the user asked for, so “no recap” does not apply. The next action still goes first.
+- `use-diagrams`: decides whether a diagram replaces part of the text and how it is drawn.
+
+Being loaded by another skill is the “single text” case: it does not turn on response mode.
 
 ## About the evidence base
 

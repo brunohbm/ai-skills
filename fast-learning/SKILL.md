@@ -1,6 +1,10 @@
 ---
 name: fast-learning
-description: An adaptive system for learning new material from articles, PDFs, documentation, books, videos, lessons, and other sources. Turns sources or goals into micro-lessons with active retrieval, practice, feedback, and application tests until the user demonstrates sufficient mastery for their goal. Use when the user wants to learn, study, understand, or master something; asks to be taught; wants a study plan; prepares for an exam, interview, or certification; or wants to learn from a source.
+description: An adaptive system for learning new material from articles, PDFs, documentation, books, videos, lessons, and other sources. Turns sources or goals into micro-lessons with active retrieval, practice, feedback, and application tests until the user demonstrates sufficient mastery for their goal. Use when the user wants to learn, study, understand, or master something; asks to be taught; wants a study plan; prepares for an exam, interview, or certification; or wants to learn from a source. Portuguese triggers include "quero aprender", "me ensina", "estudar", "plano de estudo", and "me prepara para a prova".
+license: MIT
+metadata:
+  tags: "Learning, Study, Retrieval practice, Tutoring"
+  category: "learning"
 ---
 
 # Fast learning
@@ -66,7 +70,9 @@ Choose the criterion based on the goal: retrieval may be enough for peripheral f
 
 ### Track progress without adding clutter
 
-Track the goal, source, learning objectives, progress, mastered material, gaps, review queue, and next lesson. Show only what helps the user understand where they are and what to do. When ending a session that will continue later, offer a compact state card. When resuming, start with retrieval of the review items before new material.
+Track the goal, source, learning objectives, progress, mastered material, gaps, review queue, and next lesson. Show only what helps the user understand where they are and what to do. When resuming, start with retrieval of the review items before new material.
+
+When the user pauses a session that will continue later, write the pause note with `checkpoint` if it is available, and give it the session state from `references/learning-loop.md` (section 13). Its "Pausing a study session" section maps that state onto the note. Without `checkpoint`, offer the state card from that section.
 
 ### Build self-assessment
 
@@ -77,6 +83,12 @@ When the user says something "is easy" or "makes sense" without having produced 
 When `light-reading` is available, use it as the presentation layer. This skill decides what to teach, in what order, and when to test, move on, or review. `light-reading` decides how to structure and present the response to reduce extraneous load and make the next action clear. Do not duplicate its presentation rules here.
 
 In a teaching turn, the user's next action is the question or task, so it goes at the end of the message, after the minimal explanation. This takes precedence over any rule to lead with the action.
+
+When `use-diagrams` is available, use it to decide whether a learning map, a concept relationship, a process, or a mechanism should be drawn. In teaching turns:
+
+- The diagram supports the explanation, never the retrieval. Do not show a diagram that contains the answer to the question that ends the turn.
+- The question still goes last, after the diagram and its explanation.
+- Learners gain more from building a map than from viewing one (see `references/techniques-and-evidence.md`, section 8). After showing a map, ask the user in a later turn to reconstruct or complete it from memory.
 
 ## Review and limited time
 
